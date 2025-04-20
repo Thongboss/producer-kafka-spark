@@ -1,0 +1,12 @@
+services:
+  producer-app:
+    image: producer-app
+    build:
+      context: .
+    networks:
+      - sprak-kafka_default
+    entrypoint: ["java", "-jar", "app.jar"]
+
+networks:
+  sprak-kafka_default:
+    external: true
